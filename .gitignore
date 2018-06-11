@@ -1,0 +1,4 @@
+# Private Configs
+/properties/configs.json
+/**/*.js
+/node_modules/

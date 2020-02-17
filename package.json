@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/lodash": "^4.14.109",
+    "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.1",
     "discord.js": "^11.3.2",
     "eslint": "^6.8.0",

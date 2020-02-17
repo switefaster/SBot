@@ -1,5 +1,4 @@
 import * as Discord from 'discord.js';
-import * as fs from 'fs';
 import * as _ from 'lodash';
 const client = new Discord.Client();
 
@@ -12,12 +11,21 @@ client.on('ready', () => {
     console.log('Ready for SB!');
 });
 let data = require('./properties/configs.json');
+console.log(data.token);
 if(data.token) {
     client.login(data.token);
 }
 else {
     console.log("JSON Error!");
 }
+
+client.on('error', error => {
+    console.error('The websocket connection encountered an error:', error);
+});
+
+process.on('unhandledRejection', error => {
+	console.error('Unhandled promise rejection:', error);
+});
 
 client.on('message', (message) => {
     let command = AliasesHelper.getCommandFromAliases(_.split(message.content, ' ')[0]);

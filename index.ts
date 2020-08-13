@@ -7,6 +7,8 @@ import * as ReplierFactory from './replier/ReplierFactory';
 
 let destroyed = false;
 
+client.options.http.api = "https://discord.com/api";
+
 client.on('ready', () => {
     console.log('Ready for SB!');
 });
@@ -18,14 +20,6 @@ if(data.token) {
 else {
     console.log("JSON Error!");
 }
-
-client.on('error', error => {
-    console.error('The websocket connection encountered an error:', error);
-});
-
-process.on('unhandledRejection', error => {
-	console.error('Unhandled promise rejection:', error);
-});
 
 client.on('message', (message) => {
     let command = AliasesHelper.getCommandFromAliases(_.split(message.content, ' ')[0]);

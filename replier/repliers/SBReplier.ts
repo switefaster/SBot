@@ -30,21 +30,6 @@ export class SBReplier implements ReplierFactory.Replier {
                 }
                 else if(subcommands[1] === "RANDOMSB") {
                     return [true, "NOPE!"];
-                    return [true, "Most of you sons are all silly, but " + message.guild.members.filter((v, k, c) => {
-                        let result = true;
-                        sbblacklist.forEach((va, i, a)=> {
-                            if(v.displayName === va) {
-                                result = false;
-                            }
-                        });
-                        return result;
-                    }).random().displayName + " is the silliest! Ahhahhahahaha"];
-                }
-                else if(subcommands[1] === "CHOSENONE") {
-                    return [true, "I SEE! " + message.guild.members.random().displayName + " is THE CHOSEN ONE who fight against the dog server master!"];
-                }
-                else if(subcommands[1] === "SBILITY") {
-                    return [true, "Now the SBILITY of this server is: " + (message.guild.members.array().length * 10 - sbblacklist.length * 10) +"!"];
                 }
             }
             case 3: {

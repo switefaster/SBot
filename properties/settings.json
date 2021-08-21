@@ -1,7 +1,0 @@
-{
-    "__comment": "This file is for some public properties. e.g. aliases",
-    "aliases": {
-        "$SB": ["$SBot","$SmartBot","$SMBot"],
-        "$HELP": ["$H"]
-    }
-}
